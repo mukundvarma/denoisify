@@ -113,6 +113,16 @@ Run the container.
 docker run -dp 8501:8501 streamlit-app
 ```
 
+## Contributing
+
+Contributions are very welcome.
+
+To contribute:
+
+1. Create an issue you would like to work on.
+2. Fork the repository.
+3. Create a pull request and attach the issue.
+
 ## Acknowledgments
 
 The initial streamlit config comes from the great
