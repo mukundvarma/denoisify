@@ -55,7 +55,7 @@ pip install -r requirements-dev.txt
 
 Start editing the app files in the *src/* directory with your favourite editor.
 
-For more information on how to develop Streamlit apps check the official [Streamlit page](https://streamlit.io/).
+For more information on how to develop Streamlit apps, check the official [Streamlit page](https://streamlit.io/).
 
 ### Run the app
 
@@ -69,7 +69,7 @@ streamlit run src/app/app.py
 
 ### Testing setup
 
-For testing you need to add the *src* directory to PYTHONPATH.
+For testing, you need to add the *src* directory to PYTHONPATH.
 
 On Linux, macOS.
 
@@ -101,13 +101,13 @@ Configure the streamlit *config.toml* to your needs.
 > When changing the default ports in the configuration, remember to change
 > them in the Dockerfile and the *docker run* command.
 
-First build the Docker image.
+Build the Docker image.
 
 ```bash
 docker build -t streamlit-app .
 ```
 
-Then run the container.
+Run the container.
 
 ```bash
 docker run -dp 8501:8501 streamlit-app
@@ -115,6 +115,6 @@ docker run -dp 8501:8501 streamlit-app
 
 ## Acknowledgments
 
-The the initial streamlit config comes from the great
+The initial streamlit config comes from the great
 [Awesome Streamlit](https://github.com/MarcSkovMadsen/awesome-streamlit)
 repository.
