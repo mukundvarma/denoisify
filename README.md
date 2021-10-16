@@ -65,7 +65,7 @@ $Env:PYTHONPATH="src"
 Start the app.
 
 ```bash
-streamlit run app.py
+streamlit run src/app/app.py
 ```
 
 ## Testing
