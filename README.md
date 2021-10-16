@@ -19,6 +19,9 @@ Move into the templates directory.
 cd my-streamlit-app
 ```
 
+On Github you can also click the **Use this template** button to automatically create
+your own repository based on this template.
+
 ### Create the development environment
 
 Create a virtual environment.
