@@ -1,4 +1,4 @@
-# A project template for streamlit apps
+# A simple project template for streamlit apps
 
 ## Usage
 To use the tamplate first clone this repository
@@ -21,3 +21,8 @@ Then run the container:
 ```bash
 docker run -dp 8501:8501 streamlit-app
 ```
+
+## Acknowledgments
+
+The the initial streamlit config comes from the great
+[Awesome Streamlit](https://github.com/MarcSkovMadsen/awesome-streamlit) repository.
