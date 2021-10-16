@@ -10,13 +10,13 @@ streamlit apps that simplifies and speeds up development.
 To use the tamplate first clone this repository.
 
 ```bash
-git clone https://github.com/pixpack/streamlit-base.git
+git clone https://github.com/pixpack/streamlit-base.git my-streamlit-app
 ```
 
 Move into the templates directory.
 
 ```bash
-cd streamlit-base
+cd my-streamlit-app
 ```
 
 ### Create the development environment
@@ -29,7 +29,7 @@ python -m venv .venv
 
 Activate the virtual environment.
 
-On Linux, OsX.
+On Linux, macOS.
 
 ```bash
 source .venv/bin/activate
@@ -44,7 +44,7 @@ On Windows (Powershell).
 Get the development dependencies.
 
 ```bash
-python -m pip install --upgrade pip
+python -m pip install --upgrade pip && \
 pip install -r requirements-dev.txt
 ```
 
@@ -68,7 +68,7 @@ streamlit run src/app/app.py
 
 For testing you need to add the *src* directory to PYTHONPATH.
 
-On Linux, OsX.
+On Linux, macOS.
 
 ```bash
 export PYTHONPATH=src
@@ -88,9 +88,15 @@ Run the tests.
 pytest
 ```
 
-## Deploy
+## Deployment
 
 The template is set up with Docker to deploy the app.
+
+### Configuration
+
+Configure the streamlit *config.toml* to your needs.
+> When changing the default ports in the configuration, remember to change
+> them in the Dockerfile and the *docker run* command.
 
 First build the Docker image.
 
