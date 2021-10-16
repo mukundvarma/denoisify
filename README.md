@@ -56,12 +56,6 @@ For more information on how to develop Streamlit apps check the official [Stream
 
 ### Run the app
 
-On Windows you need to add the *src* directory to PYTHONPATH.
-
-```powershell
-$Env:PYTHONPATH="src"
-```
-
 Start the app.
 
 ```bash
@@ -70,11 +64,23 @@ streamlit run src/app/app.py
 
 ## Testing
 
-On Windows you need to add the *src* directory to PYTHONPATH.
+### Testing setup
+
+For testing you need to add the *src* directory to PYTHONPATH.
+
+On Linux, OsX.
+
+```bash
+export PYTHONPATH=src
+```
+
+On Windows (Powershell).
 
 ```powershell
 $Env:PYTHONPATH="src"
 ```
+
+### Running tests
 
 Run the tests.
 
