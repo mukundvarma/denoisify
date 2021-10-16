@@ -1,18 +1,22 @@
 FROM python:3.8-slim
 
-COPY requirements.txt /tmp/
-RUN pip install --quiet --no-cache-dir -r /tmp/requirements.txt
-
+RUN apt-get -y update && apt-get -y upgrade
 
 RUN useradd --create-home appuser
 WORKDIR /home/appuser
 USER appuser
 
+ENV PATH="/home/appuser/.local/bin:${PATH}"
+
+COPY requirements-prod.txt /tmp/
+RUN python3 -m pip install --upgrade pip && \
+    pip install --no-cache-dir -r /tmp/requirements-prod.txt
+
 RUN mkdir ~/.streamlit
 
 COPY .streamlit/config.toml .streamlit/
-COPY src .
+COPY data data/
+COPY app .
 
-EXPOSE 8501
 ENTRYPOINT ["streamlit", "run"]
-CMD ["app.py"]
+CMD ["main.py"]
