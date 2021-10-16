@@ -1,9 +1,11 @@
-# Simple **Streamlit** project template
+# Simple *Streamlit* project template
 
 The purpose of this repository is to provide an initial project template for
 streamlit apps that simplifies and speeds up development.
 
-## Usage
+## Development
+
+### Get the template
 
 To use the tamplate first clone this repository.
 
@@ -17,7 +19,68 @@ Move into the templates directory.
 cd streamlit-base
 ```
 
+### Create the development environment
+
+Create a virtual environment.
+
+```bash
+python -m venv .venv
+```
+
+Activate the virtual environment.
+
+On Linux, OsX.
+
+```bash
+source .venv/bin/activate
+```
+
+On Windows (Powershell).
+
+```bash
+.venv/Scripts/Activate.ps1
+```
+
+Get the development dependencies.
+
+```bash
+python -m pip install --upgrade pip
+pip install -r requirements-dev.txt
+```
+
+### Edit the code
+
 Start editing the app files in the *src/* directory with your favourite editor.
+
+For more information on how to develop Streamlit apps check the official [Streamlit page](https://streamlit.io/).
+
+### Run the app
+
+On Windows you need to add the *src* directory to PYTHONPATH.
+
+```powershell
+$Env:PYTHONPATH="src"
+```
+
+Start the app.
+
+```bash
+streamlit run app.py
+```
+
+## Testing
+
+On Windows you need to add the *src* directory to PYTHONPATH.
+
+```powershell
+$Env:PYTHONPATH="src"
+```
+
+Run the tests.
+
+```bash
+pytest
+```
 
 ## Deploy
 
