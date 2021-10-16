@@ -21,15 +21,15 @@ Start editing the app files in the *src/* directory with your favourite editor.
 
 ## Deploy
 
-The template is set up with docker to deploy the app.
+The template is set up with Docker to deploy the app.
 
-Build the docker image:
+First build the Docker image.
 
 ```bash
 docker build -t streamlit-app .
 ```
 
-Then run the container:
+Then run the container.
 
 ```bash
 docker run -dp 8501:8501 streamlit-app
