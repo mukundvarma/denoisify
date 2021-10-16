@@ -12,6 +12,9 @@ def main():
         This app is a project template for streamplit apps.
     """)
 
+    st.title("Template streamlit app")
+    st.write("Some **markdown** placeholder *text*.")
+
 
 if __name__ == "__main__":
     main()
