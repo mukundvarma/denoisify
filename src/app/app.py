@@ -1,6 +1,7 @@
 """Main module for the streamlit template app"""
 import streamlit as st
 
+
 def main():
     """Main function of the App"""
     st.sidebar.title("Navigation")
@@ -8,9 +9,10 @@ def main():
 
     st.sidebar.title("About")
     st.sidebar.info(
-    """
+        """
         This app is a project template for streamplit apps.
-    """)
+    """
+    )
 
     st.title("Template streamlit app")
     st.write("Some **markdown** placeholder *text*.")
