@@ -59,37 +59,21 @@ For more information on how to develop Streamlit apps, check the official [Strea
 
 ### Run the app
 
-Start the app.
+Start the app with the *streamlit run* command.
 
 ```bash
-streamlit run src/app/app.py
+streamlit run app/main.py
 ```
 
 ## Testing
-
-### Testing setup
-
-For testing, you need to add the *src* directory to PYTHONPATH.
-
-On Linux, macOS.
-
-```bash
-export PYTHONPATH=src
-```
-
-On Windows (Powershell).
-
-```powershell
-$Env:PYTHONPATH="src"
-```
-
-### Running tests
 
 Run the tests.
 
 ```bash
 pytest
 ```
+
+For more information on testing, visit [pytest documentation](https://docs.pytest.org/).
 
 ## Deployment
 
@@ -98,8 +82,8 @@ The template is set up with Docker to deploy the app.
 ### Configuration
 
 Configure the streamlit *config.toml* to your needs.
-> When changing the default ports in the configuration, remember to change
-> them in the Dockerfile and the *docker run* command.
+> When changing the default ports in the configuration, remember to also change
+> them in *docker run* command.
 
 Build the Docker image.
 

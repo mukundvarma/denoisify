@@ -10,10 +10,7 @@ USER appuser
 RUN mkdir ~/.streamlit
 
 COPY .streamlit/config.toml .streamlit/
-COPY src/app .
-
-# The port specified here should correspond to the portst in streamlit config.toml file.
-EXPOSE 8501
+COPY app .
 
 ENTRYPOINT ["streamlit", "run"]
-CMD ["app.py"]
+CMD ["main.py"]
