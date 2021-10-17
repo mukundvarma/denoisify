@@ -10,6 +10,7 @@ USER appuser
 RUN mkdir ~/.streamlit
 
 COPY .streamlit/config.toml .streamlit/
+COPY data data/
 COPY app .
 
 ENTRYPOINT ["streamlit", "run"]
