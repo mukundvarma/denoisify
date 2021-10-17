@@ -1,7 +1,7 @@
 # Simple *Streamlit* project template
 
 The purpose of this repository is to provide an initial project template for
-streamlit apps that simplifies and speeds up development.
+[Streamlit](https://streamlit.io/) apps that simplifies and speeds up development.
 
 ## Development
 
@@ -55,7 +55,7 @@ pip install -r requirements-dev.txt
 
 Start editing the app files in the `app` directory with your favourite editor.
 
-For more information on how to develop Streamlit apps, check the official [Streamlit page](https://streamlit.io/).
+For more information on how to develop Streamlit apps, check [Streamlit documentation](https://docs.streamlit.io/).
 
 ### Run the app
 
