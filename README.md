@@ -19,7 +19,7 @@ Move into the templates directory.
 cd my-streamlit-app
 ```
 
-On Github you can also click the **Use this template** button to automatically create
+On Github you can also click the `Use this template` button to automatically create
 your own repository based on this template.
 
 ### Create the development environment
@@ -53,13 +53,13 @@ pip install -r requirements-dev.txt
 
 ### Edit the code
 
-Start editing the app files in the *src/* directory with your favourite editor.
+Start editing the app files in the `app` directory with your favourite editor.
 
 For more information on how to develop Streamlit apps, check the official [Streamlit page](https://streamlit.io/).
 
 ### Run the app
 
-Start the app with the *streamlit run* command.
+Start the app with the `streamlit run` command.
 
 ```bash
 streamlit run app/main.py
@@ -81,9 +81,9 @@ The template is set up with Docker to deploy the app.
 
 ### Configuration
 
-Configure the streamlit *config.toml* to your needs.
+Configure the streamlit `config.toml` to your needs.
 > When changing the default ports in the configuration, remember to also change
-> them in *docker run* command.
+> them in `docker run` command.
 
 Build the Docker image.
 
