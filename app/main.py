@@ -1,6 +1,6 @@
 """Main module for the streamlit template app"""
 import streamlit as st
-
+import pandas as pd
 
 def main():
     """Main function of the App"""
@@ -13,6 +13,9 @@ def main():
     st.title("Template streamlit app")
     st.write("Some **markdown** placeholder *text*.")
 
+    prices = pd.read_csv("data/prices.csv")
+    st.write("Some price data:")
+    st.write(prices)
 
 if __name__ == "__main__":
     main()
