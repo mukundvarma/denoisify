@@ -8,9 +8,9 @@ USER appuser
 
 ENV PATH="/home/appuser/.local/bin:${PATH}"
 
-COPY requirements-prod.txt /tmp/
+COPY requirements.txt /tmp/
 RUN python3 -m pip install --upgrade pip && \
-    pip install --no-cache-dir -r /tmp/requirements-prod.txt
+    pip install --no-cache-dir -r /tmp/requirements.txt
 
 RUN mkdir ~/.streamlit
 
