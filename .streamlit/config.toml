@@ -49,7 +49,7 @@ fixMatplotlib = true
 # Example: ['/home/user1/env', 'relative/path/to/folder']
 # Default: []
 folderWatchBlacklist = ['']
-
+maxUploadSize = 1024
 
 
 # If false, will attempt to open a browser window on start.
