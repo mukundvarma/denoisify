@@ -3,6 +3,7 @@ import os
 import subprocess
 import tempfile
 import noisereduce as nr
+import logging
 from maad.sound import (
     spectrogram,
     sharpness,
@@ -11,6 +12,8 @@ from maad.sound import (
     avg_power_spectro,
 )
 import numpy as np
+import streamlit as st
+
 from scipy.io import wavfile
 
 from sklearn.base import BaseEstimator, TransformerMixin
@@ -89,13 +92,13 @@ class Denoiser(BaseEstimator, TransformerMixin):
         self.sigmoid_slope_nonstationary = sigmoid_slope_nonstationary
         self.n_std_thresh_stationary = n_std_thresh_stationary
         self.n_fft = n_fft
-        print("Init complete")
+        logging.debug("Init complete")
 
     def fit(self, X, y=None):
         return self
 
     def transform(self, X):
-        print("starting transform")
+        logging.debug("starting transform")
         nframes, nchannels = X.shape
         # todo: figure out how to deal with multiple channels
         denoised = nr.reduce_noise(
@@ -104,7 +107,7 @@ class Denoiser(BaseEstimator, TransformerMixin):
             use_tqdm=True,
             chunk_size=3000,
         )
-        print(len(denoised))
+        logging.debug(len(denoised))
         return denoised
 
     def score(self, X, y=None):
@@ -122,7 +125,7 @@ class Denoiser(BaseEstimator, TransformerMixin):
                 ]
             )
         )
-        print("finished score.")
+        logging.debug("finished score.")
         return metrics["temporal"][2] * metrics["spectral"][2] * np.sqrt(power)
 
 
@@ -146,22 +149,19 @@ def denoise(audio_file, grid_search=False):
     rate, data = wavfile.read(audio_file)
     basename, ext = os.path.splitext(audio_file)
 
-    print("Starting to denoise.")
     if grid_search:
-        print("Entering grid search.")
+        logging.debug("Entering grid search.")
         best_stationary, s_score = choose_best_denoiser(data, rate, PARAM_GRID_S)
         best_nonstationary, ns_score = choose_best_denoiser(data, rate, PARAM_GRID_NS)
         best = best_nonstationary
         if ns_score < s_score:
             best = best_stationary
     else:
-        print("Single denoiser.")
+        logging.debug("Single denoiser.")
         dn = Denoiser(rate)
         best = dn.fit_transform(data)
 
     wavfile.write(f"{basename}.denoised.wav", rate, best)
-    print("Denoised audio written.")
-
     return f"{basename}.denoised.wav"
 
 
