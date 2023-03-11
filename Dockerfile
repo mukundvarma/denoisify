@@ -15,7 +15,6 @@ RUN python3 -m pip install --upgrade pip && \
 RUN mkdir ~/.streamlit
 
 COPY .streamlit/config.toml .streamlit/
-COPY data data/
 COPY app .
 
 ENTRYPOINT ["streamlit", "run"]
